@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wastewater & Sewage Treatment Solutions - Mowatek</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Distinctive, professional typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Outfit', 'sans-serif'],
+                        'serif': ['Crimson Pro', 'serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            200: '#fecaca',
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-down': 'slideDown 0.3s ease-out',
+                        'scale-in': 'scaleIn 0.3s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Smooth transitions for interactive elements */
+        * {
+            transition-property: color, background-color, border-color, transform, opacity, box-shadow;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 200ms;
+        }
+        
+        /* Grain texture overlay for depth */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.6;
+        }
+        
+        /* Gradient backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #0ea5e9;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0369a1;
+        }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased bg-slate-50 text-slate-900">
+    
+    <!-- Navigation Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="../" class="flex items-center space-x-2 group">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                        <span class="text-white font-bold text-xl">M</span>
+                    </div>
+                    <span class="text-2xl font-bold text-slate-900">Mowatek</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../#home" class="nav-link text-slate-700 hover:text-primary-600 font-medium">Home</a>
+                    <a href="../#services" class="nav-link text-slate-700 hover:text-primary-600 font-medium">Services</a>
+                    <a href="../#about" class="nav-link text-slate-700 hover:text-primary-600 font-medium">About</a>
+                    <a href="../#portfolio" class="nav-link text-slate-700 hover:text-primary-600 font-medium">Portfolio</a>
+                    <a href="../#contact" class="nav-link text-slate-700 hover:text-primary-600 font-medium">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="../#contact" class="px-6 py-3 gradient-bg text-white rounded-full font-medium hover:shadow-lg transform hover:scale-105">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="py-4 space-y-4">
+                    <a href="../#home" class="block py-2 text-slate-700 hover:text-primary-600 font-medium">Home</a>
+                    <a href="../#services" class="block py-2 text-slate-700 hover:text-primary-600 font-medium">Services</a>
+                    <a href="../#about" class="block py-2 text-slate-700 hover:text-primary-600 font-medium">About</a>
+                    <a href="../#portfolio" class="block py-2 text-slate-700 hover:text-primary-600 font-medium">Portfolio</a>
+                    <a href="../#contact" class="block py-2 text-slate-700 hover:text-primary-600 font-medium">Contact</a>
+                    <a href="../#contact" class="block w-full px-6 py-3 gradient-bg text-white rounded-full font-medium text-center">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-300 rounded-full filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="space-y-8 animate-fade-in">
+                    <!-- Breadcrumb -->
+                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                        <a href="../" class="hover:text-primary-600">Home</a>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                        <span class="text-primary-600 font-medium">Wastewater & Sewage Treatment</span>
+                    </div>
+                    
+                    <div class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 font-medium text-sm">
+                        ♻️ Environmental Protection
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
+                        Wastewater &
+                        <span class="gradient-text block mt-2">Sewage Treatment</span>
+                    </h1>
+                    
+                    <p class="text-xl text-slate-600 leading-relaxed max-w-xl">
+                        Advanced wastewater and sewage treatment solutions that protect the environment, ensure safe water reuse, and support sustainable urban and industrial growth.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="px-8 py-4 gradient-bg text-white rounded-full font-medium hover:shadow-xl transform hover:scale-105 text-center">
+                            Request a Quote
+                        </a>
+                        <a href="#solutions" class="px-8 py-4 bg-white border-2 border-slate-200 text-slate-900 rounded-full font-medium hover:border-primary-600 text-center">
+                            Our Solutions
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right Visual -->
+                <div class="relative animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="relative aspect-square max-w-lg mx-auto">
+                        <div class="absolute inset-0 gradient-bg rounded-3xl transform rotate-6 opacity-20"></div>
+                        <div class="relative bg-white rounded-3xl shadow-2xl p-8 flex items-center justify-center border border-slate-100">
+                            <div class="text-center space-y-4">
+                                <div class="w-32 h-32 mx-auto gradient-bg rounded-full flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                        <rect x="12" y="20" width="40" height="32" rx="4" fill="white"/>
+                                        <path d="M12 40C16 36 24 36 32 40C40 44 48 44 52 40V52H12V40Z" fill="#0ea5e9"/>
+                                        <rect x="8" y="28" width="4" height="12" fill="white"/>
+                                        <rect x="52" y="28" width="4" height="12" fill="white"/>
+                                        <path d="M12 52C16 50 24 50 32 52C40 54 48 54 52 52" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <p class="text-2xl font-bold text-slate-900">Clean Discharge</p>
+                                <p class="text-slate-600">Advanced Treatment Systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Introduction Section -->
+    <section id="introduction" class="py-20 lg:py-32 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <div class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 font-medium text-sm mb-4">
+                        About Wastewater Treatment
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        Why Wastewater Treatment <span class="gradient-text">Is Critical</span>
+                    </h2>
+                </div>
+                
+                <div class="prose prose-lg max-w-none reveal" style="animation-delay: 0.1s;">
+                    <p class="text-xl text-slate-600 leading-relaxed mb-6">
+                        Wastewater and sewage treatment is essential for protecting public health, preserving water resources, and maintaining environmental sustainability. Untreated wastewater poses serious risks to human health and ecosystems, making proper treatment not just a regulatory requirement, but a fundamental responsibility.
+                    </p>
+                    
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        At Mowatek, we design and implement comprehensive wastewater treatment systems that efficiently remove pollutants, organic matter, and pathogens. Our solutions ensure compliance with environmental regulations while enabling safe water reuse and protecting receiving water bodies from contamination.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Treatment Solutions Section -->
+    <section id="solutions" class="py-20 lg:py-32 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <div class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 font-medium text-sm mb-4">
+                    Our Solutions
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Comprehensive Wastewater <span class="gradient-text">Treatment Technologies</span>
+                </h2>
+                <p class="text-xl text-slate-600">
+                    Advanced treatment processes designed for municipal, industrial, and commercial wastewater management.
+                </p>
+            </div>
+            
+            <!-- Solutions Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Solution 1: Primary Treatment -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 border border-slate-100">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Primary Treatment</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Physical and mechanical processes that remove large solids, grit, and settleable materials through screening, sedimentation, and flotation.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Bar screens & grit chambers</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Sedimentation tanks</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Oil & grease removal</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 2: Biological Treatment -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 border border-slate-100" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Biological Treatment</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Advanced biological processes using microorganisms to break down organic matter and nutrients through aerobic and anaerobic treatment methods.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Activated sludge systems</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Moving bed biofilm reactors</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Membrane bioreactors (MBR)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 3: Tertiary Treatment -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 border border-slate-100" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Tertiary Treatment</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Advanced polishing processes for removing remaining suspended solids, nutrients, and pathogens to achieve high-quality effluent standards.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Sand filtration systems</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Nutrient removal (N & P)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>UV & chlorine disinfection</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 4: Sludge Treatment -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 border border-slate-100" style="animation-delay: 0.3s;">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Sludge Management</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Comprehensive sludge treatment and disposal solutions including thickening, digestion, dewatering, and beneficial reuse options.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Anaerobic digestion</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Mechanical dewatering</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Biosolids management</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 5: Industrial Wastewater -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 border border-slate-100" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Industrial Systems</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Specialized treatment for industrial wastewater with unique contaminants including heavy metals, chemicals, and high-strength organic loads.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Chemical treatment systems</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Heavy metal removal</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Advanced oxidation processes</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 6: Water Reuse -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 border border-slate-100" style="animation-delay: 0.5s;">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Water Reclamation</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Advanced treatment for water reuse applications including irrigation, industrial processes, and non-potable urban uses.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Membrane filtration</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Reverse osmosis systems</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Multi-barrier treatment</span>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Applications Section -->
+    <section id="applications" class="py-20 lg:py-32 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <div class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 font-medium text-sm mb-4">
+                    Applications
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Industries We <span class="gradient-text">Serve</span>
+                </h2>
+                <p class="text-xl text-slate-600">
+                    Tailored wastewater treatment solutions for diverse sectors and applications.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Application 1 -->
+                <div class="reveal bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Municipal Systems</h3>
+                            <p class="text-slate-600">
+                                Urban and suburban sewage treatment plants serving residential communities with scalable capacity from small towns to large cities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Application 2 -->
+                <div class="reveal bg-slate-50 rounded-2xl p-8 border border-slate-100" style="animation-delay: 0.1s;">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Manufacturing Plants</h3>
+                            <p class="text-slate-600">
+                                Industrial wastewater treatment for manufacturing facilities including textiles, chemicals, pharmaceuticals, and food processing industries.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Application 3 -->
+                <div class="reveal bg-slate-50 rounded-2xl p-8 border border-slate-100" style="animation-delay: 0.2s;">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Commercial Complexes</h3>
+                            <p class="text-slate-600">
+                                Treatment systems for shopping malls, office buildings, hotels, hospitals, and educational institutions with high-volume discharge.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Application 4 -->
+                <div class="reveal bg-slate-50 rounded-2xl p-8 border border-slate-100" style="animation-delay: 0.3s;">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Agricultural Operations</h3>
+                            <p class="text-slate-600">
+                                Specialized treatment for agricultural runoff, livestock operations, and food processing facilities with organic-rich wastewater.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 lg:py-32 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Left Content -->
+                <div class="space-y-8 reveal">
+                    <div class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 font-medium text-sm">
+                        Why Choose Us
+                    </div>
+                    
+                    <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
+                        Benefits of Our
+                        <span class="gradient-text block mt-2">Treatment Systems</span>
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Environmental Protection</h4>
+                                <p class="text-slate-600">Prevent water pollution, protect aquatic ecosystems, and preserve natural water bodies for future generations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Regulatory Compliance</h4>
+                                <p class="text-slate-600">Meet stringent discharge standards and environmental regulations while avoiding penalties and legal issues.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Water Resource Recovery</h4>
+                                <p class="text-slate-600">Enable safe water reuse for irrigation, industrial processes, and non-potable applications, reducing freshwater demand.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Energy & Resource Recovery</h4>
+                                <p class="text-slate-600">Recover biogas from anaerobic digestion and valuable resources from sludge, creating circular economy opportunities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Public Health Protection</h4>
+                                <p class="text-slate-600">Eliminate disease-causing pathogens and contaminants, safeguarding community health and preventing waterborne illnesses.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Right Visual -->
+                <div class="reveal" style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        <div class="absolute -top-8 -right-8 w-64 h-64 bg-primary-200 rounded-full filter blur-3xl opacity-30"></div>
+                        <div class="relative bg-white rounded-3xl shadow-xl p-12 border border-slate-100">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="text-center p-6 bg-slate-50 rounded-xl">
+                                    <div class="text-4xl font-bold text-primary-600 mb-2">95%</div>
+                                    <div class="text-sm text-slate-600">Pollutant Removal</div>
+                                </div>
+                                <div class="text-center p-6 bg-slate-50 rounded-xl">
+                                    <div class="text-4xl font-bold text-primary-600 mb-2">100%</div>
+                                    <div class="text-sm text-slate-600">Compliance Rate</div>
+                                </div>
+                                <div class="text-center p-6 bg-slate-50 rounded-xl">
+                                    <div class="text-4xl font-bold text-primary-600 mb-2">40%</div>
+                                    <div class="text-sm text-slate-600">Cost Reduction</div>
+                                </div>
+                                <div class="text-center p-6 bg-slate-50 rounded-xl">
+                                    <div class="text-4xl font-bold text-primary-600 mb-2">20+</div>
+                                    <div class="text-sm text-slate-600">Years Experience</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section id="process" class="py-20 lg:py-32 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <div class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 font-medium text-sm mb-4">
+                    Our Process
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    How We <span class="gradient-text">Implement Solutions</span>
+                </h2>
+                <p class="text-xl text-slate-600">
+                    From feasibility studies to long-term operation, we ensure successful project delivery and performance.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                
+                <!-- Step 1 -->
+                <div class="reveal flex gap-8 items-start">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-2xl">
+                        1
+                    </div>
+                    <div class="flex-1 pt-3">
+                        <h3 class="text-2xl font-bold mb-3">Site Assessment & Testing</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Comprehensive wastewater characterization, flow analysis, and site evaluation to understand discharge requirements and treatment objectives.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="reveal flex gap-8 items-start" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-2xl">
+                        2
+                    </div>
+                    <div class="flex-1 pt-3">
+                        <h3 class="text-2xl font-bold mb-3">Engineering Design</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Detailed engineering design including process selection, hydraulic modeling, equipment specification, and construction drawings tailored to your needs.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="reveal flex gap-8 items-start" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-2xl">
+                        3
+                    </div>
+                    <div class="flex-1 pt-3">
+                        <h3 class="text-2xl font-bold mb-3">Construction & Installation</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Professional construction management, quality control, and installation by experienced contractors following best industry practices.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="reveal flex gap-8 items-start" style="animation-delay: 0.3s;">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-2xl">
+                        4
+                    </div>
+                    <div class="flex-1 pt-3">
+                        <h3 class="text-2xl font-bold mb-3">Commissioning & Startup</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Systematic startup procedures, performance testing, operator training, and optimization to achieve design specifications and regulatory compliance.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="reveal flex gap-8 items-start" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-2xl">
+                        5
+                    </div>
+                    <div class="flex-1 pt-3">
+                        <h3 class="text-2xl font-bold mb-3">Operations & Maintenance</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Ongoing technical support, preventive maintenance programs, performance monitoring, and continuous optimization for long-term success.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Technology Highlights -->
+    <section id="technology" class="py-20 lg:py-32 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <div class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 font-medium text-sm mb-4">
+                    Advanced Technology
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Innovative Treatment <span class="gradient-text">Technologies</span>
+                </h2>
+                <p class="text-xl text-slate-600">
+                    We leverage cutting-edge technologies to deliver superior treatment performance and efficiency.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <div class="reveal bg-white rounded-2xl p-8 border border-slate-100 text-center">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Smart Automation</h3>
+                    <p class="text-slate-600">
+                        AI-powered control systems that optimize treatment processes in real-time for maximum efficiency and reliability.
+                    </p>
+                </div>
+                
+                <div class="reveal bg-white rounded-2xl p-8 border border-slate-100 text-center" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Energy Recovery</h3>
+                    <p class="text-slate-600">
+                        Biogas capture and utilization systems that generate renewable energy while treating waste, reducing carbon footprint.
+                    </p>
+                </div>
+                
+                <div class="reveal bg-white rounded-2xl p-8 border border-slate-100 text-center" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Real-Time Monitoring</h3>
+                    <p class="text-slate-600">
+                        IoT sensors and cloud-based dashboards providing 24/7 visibility into system performance and water quality parameters.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 lg:py-32 bg-slate-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center space-y-8 reveal">
+                
+                <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
+                    Ready to Implement a
+                    <span class="text-primary-400 block mt-2">Sustainable Solution?</span>
+                </h2>
+                
+                <p class="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
+                    Contact our wastewater treatment experts for a free consultation and site assessment. Let's design the perfect system for your specific requirements.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                    <a href="../#contact" class="px-8 py-4 bg-primary-600 text-white rounded-full font-medium hover:bg-primary-700 hover:shadow-xl transform hover:scale-105 text-center">
+                        Request Consultation
+                    </a>
+                    <a href="tel:+15551234567" class="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full font-medium hover:bg-white/20 text-center">
+                        Call Us Now
+                    </a>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="grid md:grid-cols-3 gap-8 pt-12 text-center">
+                    <div>
+                        <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold mb-1">Email Us</h4>
+                        <p class="text-slate-300">info@mowatek.com</p>
+                    </div>
+                    
+                    <div>
+                        <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold mb-1">Call Us</h4>
+                        <p class="text-slate-300">+1 (555) 123-4567</p>
+                    </div>
+                    
+                    <div>
+                        <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold mb-1">Visit Us</h4>
+                        <p class="text-slate-300">123 Business St, Tech City</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <a href="../" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">M</span>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Mowatek</span>
+                    </a>
+                    <p class="text-slate-400 leading-relaxed max-w-md mb-6">
+                        Building digital excellence through innovation, dedication, and cutting-edge technology solutions.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Facebook">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../#home" class="hover:text-primary-400 transition-colors">Home</a></li>
+                        <li><a href="../#services" class="hover:text-primary-400 transition-colors">Services</a></li>
+                        <li><a href="../#about" class="hover:text-primary-400 transition-colors">About Us</a></li>
+                        <li><a href="../#portfolio" class="hover:text-primary-400 transition-colors">Portfolio</a></li>
+                        <li><a href="../#contact" class="hover:text-primary-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../water-treatment/" class="hover:text-primary-400 transition-colors">Water Treatment</a></li>
+                        <li><a href="./" class="hover:text-primary-400 transition-colors">Wastewater Treatment</a></li>
+                        <li><a href="../solid-waste-management/" class="hover:text-primary-400 transition-colors">Solid Waste</a></li>
+                        <li><a href="../supply-installation-maintenance/" class="hover:text-primary-400 transition-colors">Installation</a></li>
+                        <li><a href="../consultancy-services/" class="hover:text-primary-400 transition-colors">Consultancy</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm">© 2026 Mowatek. All rights reserved.</p>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="hover:text-primary-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-400 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-primary-400 transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button 
+        id="scroll-top" 
+        class="fixed bottom-8 right-8 w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white shadow-lg opacity-0 pointer-events-none transition-opacity hover:shadow-xl transform hover:scale-110"
+        aria-label="Scroll to top"
+    >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+    
+    <!-- JavaScript -->
+    <script>
+        // ===================================
+        // NAVIGATION FUNCTIONALITY
+        // ===================================
+        
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white', 'shadow-md');
+            } else {
+                header.classList.remove('bg-white', 'shadow-md');
+            }
+        });
+        
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // ===================================
+        // SCROLL ANIMATIONS
+        // ===================================
+        
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            }
+        );
+        
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+        
+        // ===================================
+        // SCROLL TO TOP BUTTON
+        // ===================================
+        
+        const scrollTopBtn = document.getElementById('scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // ===================================
+        // ACCESSIBILITY
+        // ===================================
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+        
+    </script>
+    
+</body>
+</html>
